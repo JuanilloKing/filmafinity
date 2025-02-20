@@ -15,4 +15,8 @@ class Ficha extends Model
     public function fichable(){
         return $this->morphTo();
     }
+
+    public function comentarios() { 
+        return $this->hasMany(Comentario::class); 
+    }
 }

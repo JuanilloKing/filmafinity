@@ -3,6 +3,7 @@
 use App\Http\Controllers\FichaController;
 use App\Http\Controllers\PeliculaController;
 use App\Http\Controllers\VideojuegoController;
+use App\Http\Controllers\ComentarioController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
@@ -20,3 +21,4 @@ require __DIR__.'/auth.php';
 Route::resource('fichas', FichaController::class);
 Route::resource('peliculas', PeliculaController::class);
 Route::resource('videojuegos', VideojuegoController::class);
+Route::resource('comentarios', ComentarioController::class);
