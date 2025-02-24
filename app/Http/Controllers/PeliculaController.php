@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comentario;
 use App\Models\Ficha;
 use App\Models\Pelicula;
 use Illuminate\Http\Request;
@@ -62,8 +63,10 @@ class PeliculaController extends Controller
      */
     public function show(Pelicula $pelicula)
     {
+        $comentarios = Comentario::where('pelicula_id', $pelicula->id)->get();
         return view('peliculas.show', 
                     ['pelicula' => $pelicula,
+                    'comentario' => $comentarios,
                     ]);
     }
 

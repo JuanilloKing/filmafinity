@@ -37,6 +37,16 @@
                     </dl>
                 </div>
             </div>
+            @foreach ($comentarios as $comentario)
+            <div class="flex flex-col py-3">
+                <dt class="mb-1 text-black-500 md:text-lg dark:text-black-400">
+                    Comentario:
+                </dt>
+                <dd class="text-lg font-semibold">
+                    {{ $comentario->titulo}}
+                </dd>
+            </div>
+            @endforeach
         </div>
         <form method="POST" action="{{ route('comentarios.store') }}" class="max-w-sm mx-auto">
             @csrf

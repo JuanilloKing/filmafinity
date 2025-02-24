@@ -20,7 +20,7 @@ class ComentarioController extends Controller
      */
     public function create(Request $request)
     {
-        //
+        return view('peliculas.show');
     }
 
     /**
@@ -28,6 +28,7 @@ class ComentarioController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request->all());
         $pelicula = $request->pelicula_id;
         $validated = $request->validate([
             'comentario' => 'nullable|string|max:255',
